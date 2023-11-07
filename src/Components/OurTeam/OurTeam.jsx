@@ -2,7 +2,8 @@ import React from 'react';
 
 const OurTeam = () => {
     return (
-        <div className='pt-32'>
+        <div className='pt-32' data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom">
             <div className="max-w-3xl mx-auto text-center mt-16">
             <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-2 pb-4 relative">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">OUR TEAM</span>

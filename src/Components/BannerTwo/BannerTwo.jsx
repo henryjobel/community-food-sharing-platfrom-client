@@ -2,7 +2,9 @@ import React from 'react';
 
 const BannerTwo = () => {
     return (
-        <div>
+        <div data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
             <div className="max-w-3xl mx-auto text-center mt-16">
             <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-2 pb-4 relative">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">OUR COMMINUITY</span>
