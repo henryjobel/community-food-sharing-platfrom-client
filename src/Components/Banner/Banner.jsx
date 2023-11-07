@@ -1,12 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Banner = () => {
     return (
         <div>
             <div className="carousel w-full h-[900px]">
-                <div id="slide1" className="carousel-item relative w-full">
+                <motion.div 
+                    id="slide1" 
+                    className="carousel-item relative w-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 4 }}
+                    exit={{ opacity: 0 }}
+                >
                     <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/km3xCJG/joel-muniz-A4-Ax1-Apccf-A-unsplash.jpg)' }}>
-                        <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="flex pt-12 px-6 md:px-20 items-center justify-center bg-hero md:h-screen overflow-hidden">
                                 <div className="flex flex-col gap-6 md:flex-row items-center max-w-8xl">
@@ -34,10 +41,16 @@ const Banner = () => {
                         <a href="#slide4" className="btn btn-outline btn-info">❮</a>
                         <a href="#slide2" className="btn btn-outline btn-info">❯</a>
                     </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
+                </motion.div>
+                <motion.div 
+                    id="slide2" 
+                    className="carousel-item relative w-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
                     <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/Q8rwB9T/signal-2023-06-03-19-53-01-980-1.jpg)' }}>
-                        <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="flex flex-wrap">
                                 <div className="w-full sm:w-8/12 mb-10">
@@ -69,21 +82,33 @@ const Banner = () => {
                         <a href="#slide1" className="btn btn-outline btn-info">❮</a>
                         <a href="#slide3" className="btn btn-outline btn-info">❯</a>
                     </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+                </motion.div>
+                <motion.div 
+                    id="slide3" 
+                    className="carousel-item relative w-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" alt="Slide 3" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-outline btn-info">❮</a>
                         <a href="#slide4" className="btn btn-outline btn-info">❯</a>
                     </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+                </motion.div>
+                <motion.div 
+                    id="slide4" 
+                    className="carousel-item relative w-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" alt="Slide 4" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-outline btn-info">❮</a>
                         <a href="#slide1" className="btn btn-outline btn-info">❯</a>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );
