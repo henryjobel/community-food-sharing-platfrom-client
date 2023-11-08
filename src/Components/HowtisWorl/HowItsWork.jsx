@@ -3,7 +3,7 @@ import React from 'react';
 const HowItsWork = () => {
     return (
         <div>
-            <div className="bg-white">
+            <div className="bg-blue-50">
     <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
 
         <div className="text-center">
