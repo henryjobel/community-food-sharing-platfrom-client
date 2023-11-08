@@ -46,7 +46,7 @@ const Register = () => {
     }
     
     return (
-        <div className="hero min-h-screen text-red-800" style={{ backgroundImage: 'url(https://www.madebydesignesia.com/themes/rockfest/images/background/t2.jpg)' }}>
+        <div className="hero min-h-screen text-red-800" style={{ backgroundImage: 'url(https://i.ibb.co/wgwXwmc/food-for-lifewb-1024x796-removebg-preview.png)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div>
                 <h1 className='text-4xl my-10 text-center text-red-700 font-bold '>Register your account Here</h1>
