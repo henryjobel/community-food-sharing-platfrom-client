@@ -3,7 +3,7 @@ import React from 'react';
 const FeaturedCard = ({ feature }) => {
 
 
-    const { foodImage, foodName, donatorImage, donatorName, foodQuantity, pickupLocation, expiredDateTime, additionalNotes } = feature
+    const { id,foodImage, foodName, donatorImage, donatorName, foodQuantity, pickupLocation, expiredDateTime, additionalNotes } = feature
 
     return (
         <div data-aos="zoom-in-right">

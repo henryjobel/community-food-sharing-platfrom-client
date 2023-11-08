@@ -7,7 +7,7 @@ const FeatureFood = () => {
 
     useEffect(()=>{
 
-        fetch('fakedata.json')
+        fetch('http://localhost:5000/foods')
         .then(res => res.json())
         .then(data => setFetured(data))
 
@@ -17,7 +17,7 @@ const FeatureFood = () => {
         <div>
             <div className='grid lg:grid-cols-3 container mx-auto gap-2 pt-14 pb-10'>
                 {
-                    fetured.map(feature => <FeaturedCard key={feature.id} feature={feature}  ></FeaturedCard>) 
+                    fetured.map(feature => <FeaturedCard key={feature._id} feature={feature}  ></FeaturedCard>) 
                 }
             </div>
         </div>
