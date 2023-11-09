@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import FoodDtls from "../Pages/FoodDtls/FoodDtls";
 
 
 
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path:'/foodsdetails/:id',
+                element:<FoodDtls></FoodDtls>,
+                loader:()=> fetch('/avialbeFakeData.json')
             }
         ]
 

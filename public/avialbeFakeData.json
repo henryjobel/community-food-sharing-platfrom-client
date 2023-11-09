@@ -10,7 +10,7 @@
       "pickupLocation": "123 Main St",
       "expiredDateTime": "2023-11-10 12:00 PM",
       "additionalNotes": "Contains bacon",
-      "image": "food1.jpg"
+      "image": "https://i.ibb.co/VCwMyts/Spaghetti-Carbonara.jpg"
     },
     {
       "id": 2,

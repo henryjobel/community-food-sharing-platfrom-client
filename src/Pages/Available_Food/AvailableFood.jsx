@@ -1,85 +1,93 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const AvailableFood = () => {
-  // State to manage the list of available foods
-  const [foods, setFoods] = useState([]);
-  // State to manage the search input
-  const [search, setSearch] = useState('');
-  // State to manage the sorting option
-  const [sortOption, setSortOption] = useState('expireDate');
 
-  useEffect(() => {
-    
-    fetch('avialbeFakeData.json')
-      .then(response => response.json())
-       .then(data => setFoods(data));
-  }, []);
+    const [foods, setFoods] = useState([]);
+    const [search, setSearch] = useState('');
+    const [sortOption, setSortOption] = useState('expireDate');
 
-  const filteredFoods = foods.filter(food => {
-    // Implement the search functionality by filtering foods based on the 'search' input
-    return food.name.toLowerCase().includes(search.toLowerCase());
-  });
+    useEffect(() => {
 
-  // Implement the sorting functionality
-  filteredFoods.sort((a, b) => {
-    if (sortOption === 'expireDate') {
-      return new Date(a.expireDate) - new Date(b.expireDate);
-    }
-    // Add more sorting options if needed
-  });
+        fetch('avialbeFakeData.json')
+            .then(response => response.json())
+            .then(data => setFoods(data));
+    }, []);
 
-  return (
-    <div className="p-4">
-      <h1 className="text-3xl font-semibold mb-4">Available Food</h1>
+    const filteredFoods = foods.filter(food => {
 
-      {/* Search and Sort Controls */}
-      <div className="flex space-x-4 mb-4">
-        <input
-          type="text"
-          placeholder="Search by Food Name"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          className="border border-gray-300 p-2 rounded-md flex-1"
-        />
-        <select
-          value={sortOption}
-          onChange={e => setSortOption(e.target.value)}
-          className="border border-gray-300 p-2 rounded-md"
-        >
-          <option value="expireDate">Sort by Expire Date</option>
-          {/* Add more sorting options if needed */}
-        </select>
-      </div>
+        return food.name.toLowerCase().includes(search.toLowerCase());
+    });
 
-      {/* List of Available Foods */}
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredFoods.map(food => (
-          <li
-            key={food.id}
-            className="bg-white rounded-md p-4 shadow-md"
-          >
-            <img
-              src={food.foodImage}
-              alt={food.name}
-              className="w-full h-40 object-cover rounded-md"
-            />
-            <h3 className="text-xl font-semibold mt-2">{food.name}</h3>
-            <p className="text-gray-600">Donator: {food.donatorName}</p>
-            <p className="text-gray-600">Quantity: {food.quantity}</p>
-            <p className="text-gray-600">Pickup Location: {food.pickupLocation}</p>
-            <p className="text-gray-600">Expire Date/Time: {food.expireDate}</p>
-            <p className="text-gray-600">Additional Notes: {food.additionalNotes}</p>
-            <button
-              
-              className="mt-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+    filteredFoods.sort((a, b) => {
+        if (sortOption === 'expireDate') {
+            return new Date(a.expireDate) - new Date(b.expireDate);
+        }
+
+    });
+
+    return (
+        <div>
+
+            <div
+                style={{
+                    background:
+                        'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.ibb.co/ZByyVB6/RS36141-MG-7012.jpg) no-repeat center',
+                    backgroundSize: 'cover',
+                }}
+                className="py-52 px-1 md:px-8 text-center relative text-white font-bold text-2xl md:text-3xl overflow-auto"
             >
-              View Details
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+                <h1 className="pb-4 text-blue-400">Search for Avaviable Foods</h1>
+                <div className="w-11/12 md:w-3/4 lg:max-w-3xl m-auto">
+                    <div className="relative z-30 text-base text-black">
+                        <input
+                            type="text"
+                            value={search}
+                            placeholder="Keyword"
+                            className="mt-2 shadow-md focus:outline-none rounded-2xl py-3 px-6 block w-full"
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                        <select
+                            value={sortOption}
+                            onChange={(e) => setSortOption(e.target.value)}
+                            className="border border-gray-300 p-2 rounded-md"
+                        >
+                            <option value="expireDate">Sort by Expire Date</option>
+
+                        </select>
+                        <div
+                            className="text-left absolute top-10 rounded-t-none rounded-b-2xl shadow bg-white divide-y w-full max-h-40 overflow-auto"
+                        >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 container mx-auto">
+                {filteredFoods.map((food) => (
+                    <li key={food.id} className="p-4  max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src={food.image} alt='' className="w-full h-64 object-cover" />
+                        <div className="px-6 py-4">
+                            <h2 className="text-xl font-semibold mb-2">{name}</h2>
+                            <div className="flex items-center mb-2">
+                                <img src={food.donator.image} alt='' className="w-8 h-8 rounded-full mr-2" />
+                                <span className="text-gray-700">{food.donator.name}</span>
+                            </div>
+                            <p className="text-gray-700">Quantity: {food.quantity} servings</p>
+                            <p className="text-gray-700">Pickup Location: {food.pickupLocation}</p>
+                            <p className="text-gray-700">Expires: {food.expiredDateTime}</p>
+                            <p className="text-gray-700">Additional Notes: {food.additionalNotes}</p>
+                        </div>
+                        <div className="px-6 py-4">
+                            <Link to={`/foodsdetails/${food.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                                View Details
+                            </Link>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default AvailableFood;
