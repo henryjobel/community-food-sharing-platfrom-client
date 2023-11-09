@@ -1,0 +1,133 @@
+[
+    {
+      "id": 1,
+      "name": "Spaghetti Carbonara",
+      "donator": {
+        "name": "John Doe",
+        "image": "donator1.jpg"
+      },
+      "quantity": 4,
+      "pickupLocation": "123 Main St",
+      "expiredDateTime": "2023-11-10 12:00 PM",
+      "additionalNotes": "Contains bacon",
+      "image": "food1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Vegetable Stir-Fry",
+      "donator": {
+        "name": "Jane Smith",
+        "image": "donator2.jpg"
+      },
+      "quantity": 3,
+      "pickupLocation": "456 Elm St",
+      "expiredDateTime": "2023-11-11 3:30 PM",
+      "additionalNotes": "Vegan-friendly",
+      "image": "food2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Chicken Alfredo",
+      "donator": {
+        "name": "Mike Johnson",
+        "image": "donator3.jpg"
+      },
+      "quantity": 5,
+      "pickupLocation": "789 Oak Ave",
+      "expiredDateTime": "2023-11-09 5:45 PM",
+      "additionalNotes": "Contains dairy",
+      "image": "food3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Caprese Salad",
+      "donator": {
+        "name": "Sara Wilson",
+        "image": "donator4.jpg"
+      },
+      "quantity": 2,
+      "pickupLocation": "101 Pine Rd",
+      "expiredDateTime": "2023-11-12 1:15 PM",
+      "additionalNotes": "Fresh tomatoes and mozzarella",
+      "image": "food4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Beef and Broccoli",
+      "donator": {
+        "name": "David Lee",
+        "image": "donator5.jpg"
+      },
+      "quantity": 4,
+      "pickupLocation": "202 Cedar Ln",
+      "expiredDateTime": "2023-11-08 6:00 PM",
+      "additionalNotes": "Gluten-free",
+      "image": "food5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Mushroom Risotto",
+      "donator": {
+        "name": "Amy Chen",
+        "image": "donator6.jpg"
+      },
+      "quantity": 3,
+      "pickupLocation": "303 Maple Dr",
+      "expiredDateTime": "2023-11-14 2:30 PM",
+      "additionalNotes": "Vegetarian",
+      "image": "food6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Shrimp Pad Thai",
+      "donator": {
+        "name": "Carlos Rodriguez",
+        "image": "donator7.jpg"
+      },
+      "quantity": 4,
+      "pickupLocation": "404 Birch Pl",
+      "expiredDateTime": "2023-11-13 4:45 PM",
+      "additionalNotes": "Contains peanuts",
+      "image": "food7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Spinach and Feta Stuffed Chicken",
+      "donator": {
+        "name": "Emily Davis",
+        "image": "donator8.jpg"
+      },
+      "quantity": 3,
+      "pickupLocation": "505 Willow Ct",
+      "expiredDateTime": "2023-11-07 7:00 PM",
+      "additionalNotes": "Low-carb",
+      "image": "food8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Vegan Chickpea Curry",
+      "donator": {
+        "name": "Alex Kim",
+        "image": "donator9.jpg"
+      },
+      "quantity": 4,
+      "pickupLocation": "606 Fern Ln",
+      "expiredDateTime": "2023-11-15 12:30 PM",
+      "additionalNotes": "Spicy",
+      "image": "food9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "BBQ Pulled Pork Sandwiches",
+      "donator": {
+        "name": "Laura Brown",
+        "image": "donator10.jpg"
+      },
+      "quantity": 5,
+      "pickupLocation": "707 Rose Ave",
+      "expiredDateTime": "2023-11-06 3:15 PM",
+      "additionalNotes": "Slow-cooked with homemade BBQ sauce",
+      "image": "food10.jpg"
+    }
+  ]
+  
