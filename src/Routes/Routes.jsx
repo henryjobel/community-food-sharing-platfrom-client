@@ -14,6 +14,7 @@ import PrivateRoutes from "./privateRoutes";
 
 
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -57,9 +58,10 @@ const router = createBrowserRouter([
             },
             {
                 path:'/foodsdetails/:id',
-                element:<PrivateRoutes><AddFood></AddFood></PrivateRoutes>,
+                element:<PrivateRoutes><FoodDtls></FoodDtls></PrivateRoutes>,
                 loader:({params})=> fetch(`http://localhost:5000/availableFoods/${params.id}`)
-            }
+            },
+            
         ]
 
     }

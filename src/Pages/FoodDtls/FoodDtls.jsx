@@ -13,7 +13,7 @@ const FoodDtls = () => {
 
     const form = event.target;
     const name = user?.displayName;
-    const photo = user?.user.photoURL
+    const photo = user?.photoURL
     const foodName = detail.name
     const email = user?.email;
     const date = detail.expiredDateTime;

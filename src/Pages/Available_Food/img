@@ -7,3 +7,20 @@ https://i.ibb.co/0YZsY9K/Shrimp-Pad-Thai.jpg
 https://i.ibb.co/VCwMyts/Spaghetti-Carbonara.jpg
 https://i.ibb.co/8c2YFJ0/Spinach-and-Feta-Stuffed-Chicken.jpg
 https://i.ibb.co/XJ7yHzn/Vegan-Chickpea-Curry.jpg
+
+
+ fetch('/api/food-request', {
+      method: 'POST',
+      body: JSON.stringify(requestInfo),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          // Request successfully added, you can show a success message or redirect the user
+        }
+      });
+
+
+
+
+      insertedId
