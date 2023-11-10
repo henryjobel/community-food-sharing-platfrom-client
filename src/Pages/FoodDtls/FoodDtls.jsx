@@ -13,6 +13,7 @@ const FoodDtls = () => {
 
     const form = event.target;
     const name = user?.displayName;
+    const photo = user?.user.photoURL
     const foodName = detail.name
     const email = user?.email;
     const date = detail.expiredDateTime;
@@ -28,7 +29,8 @@ const FoodDtls = () => {
       adtionalinfo,
       donations,
       foodName,
-      foodImage
+      foodImage,
+      photo
     }
     console.log(reqst)
     fetch('http://localhost:5000/foodrequest', {

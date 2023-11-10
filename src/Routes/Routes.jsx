@@ -10,6 +10,7 @@ import Register from "../Pages/Register/Register";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import FoodDtls from "../Pages/FoodDtls/FoodDtls";
+import PrivateRoutes from "./privateRoutes";
 
 
 
@@ -28,15 +29,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addfood',
-                element:<AddFood></AddFood>
+                element:<PrivateRoutes><AddFood></AddFood></PrivateRoutes>
             },
             {
                 path: '/managefood',
-                element:<ManageFood></ManageFood>
+                element:<PrivateRoutes><ManageFood></ManageFood></PrivateRoutes>
             },
             {
                 path: '/foodrequest',
-                element:<FoodRequest></FoodRequest>
+                element:<PrivateRoutes><FoodRequest></FoodRequest></PrivateRoutes>
             },
             {
                 path: '/login',
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/foodsdetails/:id',
-                element:<FoodDtls></FoodDtls>,
+                element:<PrivateRoutes><AddFood></AddFood></PrivateRoutes>,
                 loader:({params})=> fetch(`http://localhost:5000/availableFoods/${params.id}`)
             }
         ]

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/ffood_log-removebg-preview.png'
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 
 const Navbar = () => {
+
+    const {user,singOut} = useContext(AuthContext)
+    const handleSignOut = () => {
+        singOut();
+      }
 
     const navLInk = <> 
     
@@ -15,6 +21,7 @@ const Navbar = () => {
     <li><NavLink to='/addfood'>AddFood</NavLink></li>
     <li><NavLink to='/about'>About Us</NavLink></li>
     <li><NavLink to='/contact'>Contact</NavLink></li>
+    
 
     </>
 
@@ -40,8 +47,18 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login'><button className='btn btn-outline btn-primary'>Login</button></Link>
-                </div>
+          {user ? (
+            <div className="flex items-center space-x-2">
+              <div className="rounded-full h-8 w-8 overflow-hidden">
+                <img src={user.photoURL} alt={user.displayName} className="h-full w-full object-cover" />
+              </div>
+              <span>{user.displayName}</span>
+              <button className='btn btn-outline btn-secondary' onClick={handleSignOut}>Sign Out</button>
+            </div>
+          ) : (
+            <Link to="/login" className='btn btn-outline btn-secondary'>Login</Link>
+          )}
+        </div>
             </div>
         </div>
     );
