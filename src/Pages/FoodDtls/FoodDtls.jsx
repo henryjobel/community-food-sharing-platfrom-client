@@ -1,11 +1,50 @@
+import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import swal from 'sweetalert';
 
 const FoodDtls = () => {
 
   const detail = useLoaderData()
+  const {user} = useContext(AuthContext)
 
+  const handleRequst = event =>{
+    event.preventDefault();
 
-
+    const form = event.target;
+    const name = user?.displayName;
+    const foodName = detail.name
+    const email = user?.email;
+    const date = detail.expiredDateTime;
+    const location = detail.pickupLocation
+    const adtionalinfo = form.additionalNotes.value
+    const donations = form.donation.value
+    const foodImage = detail.image
+    const reqst ={
+      donarName: name,
+      email,
+      date,
+      location,
+      adtionalinfo,
+      donations,
+      foodName,
+      foodImage
+    }
+    console.log(reqst)
+    fetch('http://localhost:5000/foodrequest', {
+      method: 'POST',
+      body: JSON.stringify(reqst),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if(data.insertedId){
+          
+          swal("Good job!", "You Requst success");
+        }
+      })
+  }
 
 
   return (
@@ -48,14 +87,46 @@ const FoodDtls = () => {
             <p className='text-xl font-bold'>Expired Date/Time: {detail.expiredDateTime} </p>
             <div className="card-actions justify-center">
               {/* You can open the modal using document.getElementById('ID').showModal() method */}
-              <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>open modal</button>
+              <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>Request Foods</button>
               <dialog id="my_modal_3" className="modal">
                 <div className="modal-box">
                   <form method="dialog">
                     {/* if there is a button in form, it will close the modal */}
                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                   </form>
-                  <h3 className="font-bold text-lg text-black">Hello!</h3>
+                  <h3 className="font-bold text-lg text-blue-400">{detail.name}</h3>
+                  <img src={detail.image} alt="" />
+                  <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <form onSubmit={handleRequst} className="card-body">
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" name='name' placeholder="email" defaultValue={user?.displayName} className="input input-bordered text-black"  />
+                      </div>
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Email</span>
+                        </label>
+                        <input type="text" defaultValue={user?.email} name='email' placeholder="email" className="input input-bordered text-black"  />
+                      </div>
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Additional Notes</span>
+                        </label>
+                        <input type="text" name='additionalNotes' placeholder="Additional Notes" className="input input-bordered" required />
+                      </div>
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Donation Money</span>
+                        </label>
+                        <input type="text" placeholder="Donation Money" name='donation' className="input input-bordered" required />
+                      </div>
+                      <div className="form-control mt-6">
+                        <input className="btn btn-primary" type="submit" value="Request Food" />
+                      </div>
+                    </form>
+                  </div>
                   <p className="py-4 text-black">Press ESC key or click on ✕ button to close</p>
                 </div>
               </dialog>
