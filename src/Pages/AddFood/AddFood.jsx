@@ -13,16 +13,16 @@ const AddFood = () => {
     
         const form = event.target;
         const foodname = form.foodname.value
-        const foodquntity = form.foodquntity.value
-        const expiredDate = form.expiredDate.value
-        const note = form.note.value
-        const photo = form.photo.value
+        const quantity = form.quantity.value
+        const expiredDateTime = form.expiredDateTime.value
+        const additionalNotes = form.additionalNotes.value
+        const image = form.image.value
         const pickupLocation = form.pickupLocation.value
-        const shortdes = form.shortdes.value
-        const name = user?.displayName;
+        const donername = user?.displayName;
         const email = user?.email;
+        const donerimage = user?.photoURL
         
-        const newFood = {foodname,name,foodquntity,pickupLocation,shortdes,note,expiredDate,email,photo}
+        const newFood = {image,quantity,pickupLocation,additionalNotes,donername,email,expiredDateTime,foodname,donerimage}
         console.log(newFood)
     
         fetch('http://localhost:5000/availableFoods', {
@@ -39,7 +39,7 @@ const AddFood = () => {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Add Product Sucessfully',
+                    title: 'Add Food Sucessfully',
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -48,7 +48,7 @@ const AddFood = () => {
     }
     
     return (
-        <div className="hero min-h-screen text-purple-300" style={{ backgroundImage: 'url(https://i.ibb.co/Q81sk6Z/brand-new-car-ai-generated-image-268835-5688.jpg)' }}>
+        <div className="hero min-h-screen text-blue-600" style={{ backgroundImage: 'url(https://i.ibb.co/KmhWWYK/feed-collage-1-768x470.png)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className=" p-24">
                 <h2 className="text-5xl font-bold text-center pb-6">Add a Food</h2>
@@ -68,7 +68,7 @@ const AddFood = () => {
                                 <span className="label-text text-white">Food Quntity</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="foodquntity" placeholder="Food Quntity" className="input input-bordered w-full" />
+                                <input type="text" name="quantity" placeholder="Food Quntity" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const AddFood = () => {
                                 <span className="label-text text-white">Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="name" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full" />
+                                <input type="text" name="donername" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -87,7 +87,7 @@ const AddFood = () => {
                                 <span className="label-text text-white">Email</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="email" placeholder="Expired Date/Time" defaultValue={user?.email} className="input input-bordered w-full" />
+                                <input type="text" name="email" placeholder="email" defaultValue={user?.email} className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -105,26 +105,18 @@ const AddFood = () => {
                                 <span className="label-text text-white">Expired Date/Time</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="expiredDate" placeholder="Expired Date/Time" className="input input-bordered w-full" />
+                                <input type="text" name="expiredDateTime" placeholder="Expired Date/Time" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
                     
                     <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-white">Short Description</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="shortdes" placeholder="Short Description" className="input input-bordered w-full" />
-                            </label>
-                        </div>
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
                                 <span className="label-text text-white"> Additional Notes</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="note" placeholder=" Additional Notes" className="input input-bordered w-full" />
+                                <input type="text" name="additionalNotes" placeholder=" Additional Notes" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -135,11 +127,19 @@ const AddFood = () => {
                                 <span className="label-text text-white">Food Image</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="photo" placeholder="Food Image" className="input input-bordered w-full" />
+                                <input type="text" name="image" placeholder="Food Image" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text text-white">Doner Image</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="donerimage"  defaultValue={user?.photoURL}  placeholder="Food Image" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Add Product" className="btn btn-outline btn-secondary" />
+                    <input type="submit" value="Add Food" className="btn btn-outline btn-secondary" />
                 </form>
             </div>
         </div>

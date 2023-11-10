@@ -49,7 +49,7 @@ const Register = () => {
         <div className="hero min-h-screen text-red-800" style={{ backgroundImage: 'url(https://i.ibb.co/wgwXwmc/food-for-lifewb-1024x796-removebg-preview.png)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div>
-                <h1 className='text-4xl my-10 text-center text-red-700 font-bold '>Register your account Here</h1>
+                <h1 className='text-4xl my-10 text-center text-blue-700 font-bold '>Register your account Here</h1>
                 <form onSubmit={handleRegister} className="w-96 mx-auto">
                     <div className="form-control">
                         <label className="label">

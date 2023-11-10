@@ -40,11 +40,11 @@ const Login = () => {
 
 
     return (
-        <div className='text-red-500'>
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://www.madebydesignesia.com/themes/rockfest/images/background/t4.jpg)' }}>
+        <div className='text-blue-500'>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/6Z5xkNt/DSC-1873-768x510.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div>
-                    <h1 className='text-4xl text-red-600 font-extrabold my-10 text-center'>Login your account</h1>
+                    <h1 className='text-4xl text-blue-600 font-extrabold my-10 text-center'>Login your account</h1>
                     <form onSubmit={handlelogin} className="w-96">
                         <div className="form-control">
                             <label className="label">
@@ -57,7 +57,7 @@ const Login = () => {
                                 <span className="label-text text-white">Password</span>
                             </label>
                             <input type="password" placeholder="password" name='password' required className="input input-bordered" />
-                            <label className="label text-red-700">
+                            <label className="label text-blue-700">
                                 <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                             </label>
                         </div>

@@ -16,7 +16,7 @@ const AvailableFood = () => {
 
     const filteredFoods = foods.filter(food => {
 
-        return food.name.toLowerCase().includes(search.toLowerCase());
+        return food.foodname.toLowerCase().includes(search.toLowerCase());
     });
 
     filteredFoods.sort((a, b) => {
@@ -68,10 +68,10 @@ const AvailableFood = () => {
                     <li key={food._id} className="p-4  max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
                         <img src={food.image} alt='' className="w-full h-64 object-cover" />
                         <div className="px-6 py-4">
-                            <h2 className="text-xl font-semibold mb-2">{food.name}</h2>
+                            <h2 className="text-xl font-semibold mb-2">{food.foodname}</h2>
                             <div className="flex items-center mb-2">
-                                <img src={food.donator.image} alt='' className="w-8 h-8 rounded-full mr-2" />
-                                <span className="text-gray-700">{food.donator.name}</span>
+                                <img src={food.donerimage} alt='' className="w-8 h-8 rounded-full mr-2" />
+                                <span className="text-gray-700">{food.donername}</span>
                             </div>
                             <p className="text-gray-700">Quantity: {food.quantity} servings</p>
                             <p className="text-gray-700">Pickup Location: {food.pickupLocation}</p>

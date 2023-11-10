@@ -65,12 +65,12 @@ const FoodDtls = () => {
             <figure className="px-10 pt-10">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img src={detail.donator.image} />
+                  <img src={detail.donerimage} />
                 </div>
               </div>
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-blue-400">{detail.donator.name}</h2>
+              <h2 className="card-title text-blue-400">{detail.donername}</h2>
               <p className='font-bold'>Food Pick up Location: <span className='text-blue-500'>{detail.pickupLocation}</span></p>
             </div>
           </div>
@@ -84,7 +84,7 @@ const FoodDtls = () => {
         <div className="  card w-96 bg-base-100 shadow-xl image-full">
           <figure><img src={detail.image} alt="Shoes" /></figure>
           <div className="card-body">
-            <h2 className="card-title">{detail.name}</h2>
+            <h2 className="card-title">{detail.foodname}</h2>
             <p className='text-xl font-bold'>Food Quantity: {detail.quantity}</p>
             <p className='text-xl font-bold'>Expired Date/Time: {detail.expiredDateTime} </p>
             <div className="card-actions justify-center">
@@ -96,8 +96,8 @@ const FoodDtls = () => {
                     {/* if there is a button in form, it will close the modal */}
                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                   </form>
-                  <h3 className="font-bold text-lg text-blue-400">{detail.name}</h3>
-                  <img src={detail.image} alt="" />
+                  <h3 className="font-bold text-lg text-blue-400">{detail.foodname}</h3>
+                  <img src={detail.foodimage} alt="" />
                   <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleRequst} className="card-body">
                       <div className="form-control">
