@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             {
                 path:'/foodsdetails/:id',
                 element:<FoodDtls></FoodDtls>,
-                loader:()=> fetch('/avialbeFakeData.json')
+                loader:({params})=> fetch(`http://localhost:5000/availableFoods/${params.id}`)
             }
         ]
 

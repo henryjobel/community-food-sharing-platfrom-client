@@ -9,7 +9,7 @@ const AvailableFood = () => {
 
     useEffect(() => {
 
-        fetch('avialbeFakeData.json')
+        fetch('http://localhost:5000/availableFoods')
             .then(response => response.json())
             .then(data => setFoods(data));
     }, []);
@@ -65,10 +65,10 @@ const AvailableFood = () => {
             </div>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 container mx-auto">
                 {filteredFoods.map((food) => (
-                    <li key={food.id} className="p-4  max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
+                    <li key={food._id} className="p-4  max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
                         <img src={food.image} alt='' className="w-full h-64 object-cover" />
                         <div className="px-6 py-4">
-                            <h2 className="text-xl font-semibold mb-2">{name}</h2>
+                            <h2 className="text-xl font-semibold mb-2">{food.name}</h2>
                             <div className="flex items-center mb-2">
                                 <img src={food.donator.image} alt='' className="w-8 h-8 rounded-full mr-2" />
                                 <span className="text-gray-700">{food.donator.name}</span>
@@ -79,7 +79,7 @@ const AvailableFood = () => {
                             <p className="text-gray-700">Additional Notes: {food.additionalNotes}</p>
                         </div>
                         <div className="px-6 py-4">
-                            <Link to={`/foodsdetails/${food.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                            <Link to={`/foodsdetails/${food._id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
                                 View Details
                             </Link>
                         </div>

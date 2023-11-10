@@ -1,105 +1,67 @@
-import React, { useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const FoodDtls = () => {
 
-    const {id}= useParams()
-    const idInt = parseInt(id)
-    const details = useLoaderData()
-    const detail = details.find(detail => detail.id === idInt)
-    console.log(detail)
-  const [requestInfo, setRequestInfo] = useState({
-    // Initialize the form fields here
-    // Food Name, Food Image, Food Id, Food Donator Email, Food Donator Name, User Email, etc.
-    additionalNotes: '',
-    donationMoney: '',
-  });
+  const detail = useLoaderData()
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setRequestInfo({
-      ...requestInfo,
-      [name]: value,
-    });
-  };
 
-  const handleRequestSubmit = () => {
-    // Implement the logic to submit the food request to the database
-    // You can make an API call to add the request to the food request collection
-    // Example:
-    // fetch('/api/food-request', {
-    //   method: 'POST',
-    //   body: JSON.stringify(requestInfo),
-    //   headers: { 'Content-Type': 'application/json' },
-    // })
-    //   .then((response) => {
-    //     if (response.status === 200) {
-    //       // Request successfully added, you can show a success message or redirect the user
-    //     }
-    //   });
-  };
+
+
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-semibold mb-4">Food Details</h1>
+    <div className='container mx-auto'>
+      <div className="max-w-3xl mx-auto text-center mt-16">
+        <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-2 pb-4 relative">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">{detail.name}</span>
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r  from-blue-300 to-indigo-500"></span>
+        </h1>
 
-      {/* Donor Information */}
-      <div className="mb-4">
-        <p className="text-xl">Donor Name: {detail.donator.name}</p>
-        <p className="text-xl">Food Pickup Location: {detail.pickupLocation}</p>
       </div>
-
-      {/* Single Food Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img
-          src={detail.image}
-          alt="Food Name"
-          className=" h-60 rounded-md"
-        />
-        <div>
-          <p className="text-xl font-semibold">Food Name: {detail.name}</p>
-          <p className="text-xl">Food Quantity:{detail.quantity}</p>
-          <p className="text-xl">Expire Date/Time: {detail.expiredDateTime}</p>
-          <button
-            onClick={handleRequestSubmit}
-            className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-          >
-            Request
-          </button>
-        </div>
-      </div>
-
-      {/* Request Form */}
-      <div className="mt-4">
-        <h2 className="text-2xl font-semibold">Request Form</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="text-xl">Additional Notes:</label>
-            <textarea
-              name="additionalNotes"
-              value={requestInfo.additionalNotes}
-              onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-md"
-              rows="4"
-            />
-          </div>
-          <div>
-            <label className="text-xl">Donation Money:</label>
-            <input
-              type="number"
-              name="donationMoney"
-              value={requestInfo.donationMoney}
-              onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-md"
-            />
+      <div className="hero">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <img src={detail.image} className="max-w-sm rounded-lg shadow-2xl" />
+          <div className="card w-96 bg-base-100 shadow-xl">
+            <figure className="px-10 pt-10">
+              <div className="avatar">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={detail.donator.image} />
+                </div>
+              </div>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title text-blue-400">{detail.donator.name}</h2>
+              <p className='font-bold'>Food Pick up Location: <span className='text-blue-500'>{detail.pickupLocation}</span></p>
+            </div>
           </div>
         </div>
-        <button
-          onClick={handleRequestSubmit}
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover-bg-blue-700"
-        >
-          Request
-        </button>
+      </div>
+      <div className="max-w-3xl mx-auto text-center mt-16">
+        <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-2 pb-4 relative">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">Food Information</span>
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r  from-blue-300 to-indigo-500"></span>
+        </h1>
+        <div className="  card w-96 bg-base-100 shadow-xl image-full">
+          <figure><img src={detail.image} alt="Shoes" /></figure>
+          <div className="card-body">
+            <h2 className="card-title">{detail.name}</h2>
+            <p className='text-xl font-bold'>Food Quantity: {detail.quantity}</p>
+            <p className='text-xl font-bold'>Expired Date/Time: {detail.expiredDateTime} </p>
+            <div className="card-actions justify-center">
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>open modal</button>
+              <dialog id="my_modal_3" className="modal">
+                <div className="modal-box">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  </form>
+                  <h3 className="font-bold text-lg text-black">Hello!</h3>
+                  <p className="py-4 text-black">Press ESC key or click on ✕ button to close</p>
+                </div>
+              </dialog>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
