@@ -9,7 +9,7 @@ const AvailableFood = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/availableFoods')
+        fetch('https://community-food-sharing-platfrom-server.vercel.app/availableFoods')
             .then(response => response.json())
             .then(data => setFoods(data));
     }, []);

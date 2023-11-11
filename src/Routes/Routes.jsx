@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             {
                 path:'/foodsdetails/:id',
                 element:<PrivateRoutes><FoodDtls></FoodDtls></PrivateRoutes>,
-                loader:({params})=> fetch(`http://localhost:5000/availableFoods/${params.id}`)
+                loader:({params})=> fetch(`https://community-food-sharing-platfrom-server.vercel.app/${params.id}`)
             },
             
         ]

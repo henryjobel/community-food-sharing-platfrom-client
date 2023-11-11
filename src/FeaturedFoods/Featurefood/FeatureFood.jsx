@@ -7,7 +7,7 @@ const FeatureFood = () => {
 
     useEffect(()=>{
 
-        fetch('http://localhost:5000/foods')
+        fetch('https://community-food-sharing-platfrom-server.vercel.app/foods')
         .then(res => res.json())
         .then(data => setFetured(data))
 

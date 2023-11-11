@@ -10,7 +10,7 @@ const ManageFood = () => {
     const [mannage, setMannage] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/foodrequest')
+        fetch('https://community-food-sharing-platfrom-server.vercel.app/foodrequest')
             .then(res => res.json())
             .then(data => setMannage(data))
     }, [])
@@ -32,7 +32,7 @@ const ManageFood = () => {
             }
           });
         if(proceed){
-            fetch(`http://localhost:5000/foodrequest/${id}`,{
+            fetch(`https://community-food-sharing-platfrom-server.vercel.app/foodrequest/${id}`,{
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -48,7 +48,7 @@ const ManageFood = () => {
     }
 
     const handleUpdate = id =>{
-        fetch(`http://localhost:5000/foodrequest/${id}`,{
+        fetch(`https://community-food-sharing-platfrom-server.vercel.app/foodrequest/${id}`,{
             method: 'PATCH',
             headers:{
                 'content-type' : 'application/json'

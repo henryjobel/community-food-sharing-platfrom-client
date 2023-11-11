@@ -33,7 +33,7 @@ const FoodDtls = () => {
       photo
     }
     console.log(reqst)
-    fetch('http://localhost:5000/foodrequest', {
+    fetch('https://community-food-sharing-platfrom-server.vercel.app/foodrequest', {
       method: 'POST',
       body: JSON.stringify(reqst),
       headers: { 'Content-Type': 'application/json' },

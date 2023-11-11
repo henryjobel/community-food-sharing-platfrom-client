@@ -25,7 +25,7 @@ const AddFood = () => {
         const newFood = {image,quantity,pickupLocation,additionalNotes,donername,email,expiredDateTime,foodname,donerimage}
         console.log(newFood)
     
-        fetch('http://localhost:5000/availableFoods', {
+        fetch('https://community-food-sharing-platfrom-server.vercel.app', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

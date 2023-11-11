@@ -7,7 +7,7 @@ const FoodRequest = () => {
   const [reqfoods, setReqFoods] = useState([]);
   useEffect(() => {
 
-    fetch('http://localhost:5000/foodrequest')
+    fetch('https://community-food-sharing-platfrom-server.vercel.app/foodrequest')
       .then(response => response.json())
       .then(data => setReqFoods(data));
   }, []);
