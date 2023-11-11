@@ -20,14 +20,44 @@ const OurTeam = () => {
                             <li className="bg-gray-100 p-5 py-10 text-center">
                                 <div className="flex flex-col items-center">
                                     <div className="flex-shrink-0">
-                                        <a href="#"><img className="mb-3 rounded-full mx-auto h-24 w-24" src="https://i.pravatar.cc/150?img=32" alt="Jane Doe" /></a>
+                                        <a href="#"><img className="mb-3 rounded-full mx-auto h-24 w-24" src="https://i.ibb.co/3Fgm873/images.jpg" alt="Jane Doe" /></a>
                                     </div>
                                     <div className="text-center">
                                         <h4 className="text-lg leading-6 font-semibold text-gray-900 transition duration-500 ease-in-out">
-                                            <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">Jane Doe</a>
+                                            <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">Jonathon Kim</a>
                                         </h4>
                                         <p className="text-sm leading-6 text-gray-500 uppercase">
-                                            web developer
+                                            CEO
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="bg-gray-100 p-5 py-10 text-center">
+                                <div className="flex flex-col items-center">
+                                    <div className="flex-shrink-0">
+                                        <a href="#"><img className="mb-3 rounded-full mx-auto h-24 w-24" src="https://i.ibb.co/gZ9vxpp/360-F-99771374-7-Ss-OAb-Jf-E4chxv-J3sp-Og5-MEOIXdij1-Mg.jpg" alt="Jane Doe" /></a>
+                                    </div>
+                                    <div className="text-center">
+                                        <h4 className="text-lg leading-6 font-semibold text-gray-900 transition duration-500 ease-in-out">
+                                            <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">James Doe</a>
+                                        </h4>
+                                        <p className="text-sm leading-6 text-gray-500 uppercase">
+                                            Program Mannager
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="bg-gray-100 p-5 py-10 text-center">
+                                <div className="flex flex-col items-center">
+                                    <div className="flex-shrink-0">
+                                        <a href="#"><img className="mb-3 rounded-full mx-auto h-24 w-24" src="https://i.ibb.co/K2Yrqyx/images-1.jpg" alt="Jane Doe" /></a>
+                                    </div>
+                                    <div className="text-center">
+                                        <h4 className="text-lg leading-6 font-semibold text-gray-900 transition duration-500 ease-in-out">
+                                            <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">Stefen</a>
+                                        </h4>
+                                        <p className="text-sm leading-6 text-gray-500 uppercase">
+                                            Programer fo Health and human researcher
                                         </p>
                                     </div>
                                 </div>
@@ -42,37 +72,7 @@ const OurTeam = () => {
                                             <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">Jane Doe</a>
                                         </h4>
                                         <p className="text-sm leading-6 text-gray-500 uppercase">
-                                            web developer
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="bg-gray-100 p-5 py-10 text-center">
-                                <div className="flex flex-col items-center">
-                                    <div className="flex-shrink-0">
-                                        <a href="#"><img className="mb-3 rounded-full mx-auto h-24 w-24" src="https://i.pravatar.cc/150?img=32" alt="Jane Doe" /></a>
-                                    </div>
-                                    <div className="text-center">
-                                        <h4 className="text-lg leading-6 font-semibold text-gray-900 transition duration-500 ease-in-out">
-                                            <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">Jane Doe</a>
-                                        </h4>
-                                        <p className="text-sm leading-6 text-gray-500 uppercase">
-                                            web developer
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="bg-gray-100 p-5 py-10 text-center">
-                                <div className="flex flex-col items-center">
-                                    <div className="flex-shrink-0">
-                                        <a href="#"><img className="mb-3 rounded-full mx-auto h-24 w-24" src="https://i.pravatar.cc/150?img=32" alt="Jane Doe" /></a>
-                                    </div>
-                                    <div className="text-center">
-                                        <h4 className="text-lg leading-6 font-semibold text-gray-900 transition duration-500 ease-in-out">
-                                            <a href="#" className="hover:text-indigo-600 transition duration-500 ease-in-out">Jane Doe</a>
-                                        </h4>
-                                        <p className="text-sm leading-6 text-gray-500 uppercase">
-                                            web developer
+                                            Child And Human Developer
                                         </p>
                                     </div>
                                 </div>
@@ -88,10 +88,8 @@ const OurTeam = () => {
                         <h3 className="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-gray-900">
                             Meet Our <span className="text-indigo-600">Team</span>
                         </h3>
-                        <p className="mt-4 text-md leading-7 text-gray-500 font-light">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                            iste dolor cupiditate blanditiis ratione.
-                            <br /><br /> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        <p className="mt-4 text-md leading-7 text-blue-950 font-medium">
+                        We are a passionate group committed to making a difference through our Community Food Sharing and Surplus Reduction Platform. Our diverse team brings together expertise in technology, community development, and a shared commitment to tackling food waste while fostering connections.
                         </p>
                     </div>
 
