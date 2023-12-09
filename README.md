@@ -10,5 +10,11 @@ The platform employs geolocation to connect users within the same local communit
 ## Community Feedback and Ratings:
 Users can provide feedback and ratings based on their experiences, promoting a trustworthy and accountable community. This feature helps build a reliable network of sharers, enhancing the overall integrity of the platform.
 
+## Technology uses: 
+### User Authentication with Firebase Auth:
+
+- Feature: Secure user registration and authentication process.
+- Technology: Firebase Authentication for seamless and secure user sign-up and login.
+
 
 - [Live Link](https://foodsharingproject-7b9be.web.app/)
